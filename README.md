@@ -35,7 +35,8 @@ daemon never touches:
 
 ```pf
 nat on utunN inet from ! <tun ip> to any -> <tun ip>
-pass out quick on en0 inet from any to { <LAN> 169.254/16 224/4 255.255.255.255 <RS servers> } no state
+pass out quick on en0 inet from any \
+    to { <LAN> 169.254/16 224/4 255.255.255.255 <RS servers> } no state
 pass out quick on en0 route-to (utunN <tun ip>) inet from any to any keep state
 ```
 
@@ -74,8 +75,8 @@ tail "/Library/Application Support/rs-nest/rs-nest.log"
 ```
 
 ```
-[2026-10-25 13:34:12] loaded tun=utun7 ip=198.18.201.193 ext=en0 lan=192.168.1.0/24 ep=[... ...]
-[2026-10-25 13:34:30] pf was disabled; re-enabled
+[13:34:12] loaded tun=utun7 ip=198.18.201.193 ext=en0 lan=192.168.1.0/24 ep=[...]
+[13:34:30] pf was disabled; re-enabled
 ```
 
 Uninstall: `sudo ./uninstall.sh`.
