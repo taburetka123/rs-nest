@@ -5,12 +5,11 @@
 ![macOS](https://img.shields.io/badge/macOS-13%2B-black?logo=apple) ![pf](https://img.shields.io/badge/engine-pf%20route--to-blue) ![bash](https://img.shields.io/badge/bash-3.2%2B-green?logo=gnubash) ![license](https://img.shields.io/badge/license-MIT-lightgrey)
 
 ```
-   your apps ──► en0 ──┐
-                       │  pf route-to            ┌──────────────┐    ┌──────────────┐
-                       └────────────────────────►│ Red Shield   │───►│ Perimeter 81 │──► corporate
-                                                 │ utunN        │    │ (nested)     │
-   LAN, Red Shield servers ──► en0 (direct)      └──────┬───────┘    └──────────────┘
-                                                        └──────────────────────────────► internet
+ apps ─► en0 ─┐ pf route-to  ┌────────────┐   ┌──────────────┐
+              └─────────────►│ Red Shield │──►│ Perimeter 81 │─► corporate
+                             │ utunN      │   │ (nested)     │
+ LAN, RS servers ─► en0      └─────┬──────┘   └──────────────┘
+                                   └──────────────────────────► internet
 ```
 
 ## Why
